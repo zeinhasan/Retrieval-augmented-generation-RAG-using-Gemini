@@ -14,19 +14,19 @@ st.title("Zein Retrieval-Augmented Generation (RAG) Gemnini✨")
 st.subheader("Powered by Langchain & Google Generative AI")
 
 make_sidebar()
-host=st.secrets['DB_Host']
-user=st.secrets['DB_User']
-password=st.secrets['DB_Password']
-database=st.secrets['DB_Database']
+hostdb=st.secrets['DB_Host']
+userdb=st.secrets['DB_User']
+passworddb=st.secrets['DB_Password']
+databasedb=st.secrets['DB_Database']
 
 # Connect the password
 def authenticate(username, password):
     try:
         conn = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
+            host=hostdb,
+            user=userdb,
+            password=passworddb,
+            database=databasedb
         )
 
         cursor = conn.cursor()
