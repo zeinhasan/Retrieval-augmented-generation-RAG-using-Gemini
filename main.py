@@ -10,7 +10,7 @@ import os
 st.set_page_config(page_title="Zein Retrieval-Augmented Generation (RAG) Gemnini✨", page_icon="GIF/icon_sm.gif")
 st.subheader("Version 1.1.1")
 st.image("GIF/main_gif.gif")
-st.title("Zein Retrieval-Augmented Generation (RAG) Gemnini✨")
+st.title("Zein Retrieval-Augmented Generation (RAG) Gemini✨")
 st.subheader("Powered by Langchain & Google Generative AI")
 
 make_sidebar()
