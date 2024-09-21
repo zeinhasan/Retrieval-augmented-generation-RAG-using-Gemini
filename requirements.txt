@@ -5,7 +5,7 @@ google-generativeai
 streamlit
 langchain-google-genai
 python-dotenv
-chromadb
+chromadb==0.3.29
 pypdf
 PyPDF2
 pandas
