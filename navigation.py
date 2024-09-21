@@ -16,7 +16,7 @@ def get_current_page_name():
 
 def make_sidebar():
     with st.sidebar:
-        st.title("Sreeya Smart Maintenance")
+        st.title("Retrieval-Augmented Generation (RAG) Gemnini✨")
         st.write("")
         st.write("")
 

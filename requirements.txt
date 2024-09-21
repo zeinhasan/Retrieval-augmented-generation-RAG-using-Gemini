@@ -1,0 +1,10 @@
+mysql-connector-python==8.3.0
+langchain
+google-generativeai
+streamlit
+langchain-google-genai
+python-dotenv
+chromadb
+pypdf
+PyPDF2
+pandas
