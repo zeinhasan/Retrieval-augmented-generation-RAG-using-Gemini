@@ -9,3 +9,4 @@ chromadb
 pypdf
 PyPDF2
 pandas
+pysqlite3-binary
