@@ -30,7 +30,7 @@ def authenticate(username, password):
         )
 
         cursor = conn.cursor()
-        query = "SELECT kode, password FROM master_user WHERE kode = %s AND password = %s"
+        query = "SELECT username, password FROM master_user WHERE username = %s AND password = %s"
         cursor.execute(query, (username, password))
         
         # Mengambil satu baris hasil
