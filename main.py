@@ -26,7 +26,8 @@ def authenticate(username, password):
             host=hostdb,
             user=userdb,
             password=passworddb,
-            database=databasedb
+            database=databasedb,
+            port=28389
         )
 
         cursor = conn.cursor()
