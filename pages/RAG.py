@@ -10,6 +10,7 @@ import pandas as pd
 import PyPDF2
 import os
 import io
+import mysql.connector
 
 #-------------------------Page Config---------------------------------
 st.set_page_config(page_title="Zein Retrieval-Augmented Generation (RAG) Gemnini✨", page_icon="icon_sm.gif")
@@ -17,10 +18,27 @@ make_sidebar()
 
 if "username" in st.session_state:
     username = st.session_state.username
-    df_user = pd.DataFrame({"username": [username]})  # Corrected DataFrame typo
+    df_user = pd.DataFrame({"username": [username]})
 else:
     st.warning("Anda harus login terlebih dahulu")
-#-------------------------Page RAG------------------------------------
+
+#-------------------------MySQL Connection-------------------------------------
+hostdb=st.secrets['DB_Host']
+userdb=st.secrets['DB_User']
+passworddb=st.secrets['DB_Password']
+databasedb=st.secrets['DB_Database']
+
+def create_connection():
+    connection = mysql.connector.connect(
+        host=hostdb,
+        user=userdb,
+        password=passworddb,
+        database=databasedb,
+        port=28389
+    )
+    return connection
+
+#-------------------------Page RAG---------------------------------------------
 #---------------------------------Layout---------------------------------------
 st.image("GIF/main_gif.gif")
 st.title("Zein Retrieval-Augmented Generation (RAG) Gemnini✨")
@@ -64,6 +82,17 @@ if uploaded_file is not None:
 
     if st.button("Get Answer"):
         if user_question:
+            # Store the uploaded file and question in MySQL (single table)
+            connection = create_connection()
+            cursor = connection.cursor()
+
+            # Insert file and question into MySQL
+            cursor.execute("INSERT INTO user_file_questions (username, file_name, file_data, question) VALUES (%s, %s, %s, %s)",
+                           (username, uploaded_file.name, pdf_data, user_question))
+            connection.commit()
+
+            st.success("File and question stored in the database!")
+
             # Get Relevant Documents
             docs = vector_index.get_relevant_documents(user_question)
 
