@@ -53,7 +53,6 @@ def authenticate(username, password):
 
 username = st.text_input("Username")
 # Uppercase the username
-username = username.upper()
 password = st.text_input("Password", type="password")
 
 
