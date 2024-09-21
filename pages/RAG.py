@@ -13,7 +13,7 @@ import io
 import mysql.connector
 
 #-------------------------Page Config---------------------------------
-st.set_page_config(page_title="Zein Retrieval-Augmented Generation (RAG) Gemnini✨", page_icon="icon_sm.gif")
+st.set_page_config(page_title="Zein Retrieval-Augmented Generation (RAG) Gemini✨", page_icon="icon_sm.gif")
 make_sidebar()
 
 if "username" in st.session_state:
