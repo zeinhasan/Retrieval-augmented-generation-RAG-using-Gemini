@@ -28,7 +28,7 @@ def make_sidebar():
             if st.button("Log out"):
                 logout()
 
-        elif get_current_page_name() != "SM_Deploy":
+        elif get_current_page_name() != "main":
             # If anyone tries to access a secret page without being logged in,
             # redirect them to the login page
             st.switch_page("main.py")
