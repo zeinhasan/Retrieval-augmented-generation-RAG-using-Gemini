@@ -30,7 +30,7 @@ st.subheader("Powered by Langchain & Google Generative AI")
 load_dotenv()
 
 # Retrieve API key from environment variable
-google_api_key = st.secrets("GOOGLE_API_KEY")
+google_api_key = st.secrets["GOOGLE_API_KEY"]
 
 # Check if the API key is available
 if google_api_key is None:
