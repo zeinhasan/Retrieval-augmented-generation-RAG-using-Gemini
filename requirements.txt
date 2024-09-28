@@ -10,3 +10,6 @@ pypdf
 PyPDF2
 pandas
 pysqlite3-binary
+SpeechRecognition
+pyttsx3
+streamlit-webrtc
